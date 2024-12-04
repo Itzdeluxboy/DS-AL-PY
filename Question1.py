@@ -1,5 +1,21 @@
 def find_given_number(cards, given_number):
-    pass
+
+    '''1)Create a variable position with the value 0.
+       2)Check whether the number at index position in card equals query.
+       3)If it does, position is the answer and can be returned from the function
+       4)If not, increment the value of position by 1, and repeat steps 2 to 5 till we reach the last position.
+       5)If the number was not found, return -1.'''
+
+    position=0
+
+    while True:
+        if cards[position]==given_number:
+            return position
+        position+=1
+
+        if position ==len(cards):
+            return -1 #number not found the in the list
+
 
 tests=[]
 test = {'input':{'cards': [13,12,11,7,4,1,0], 'given_number': 7}, 'output' : 3}
@@ -37,7 +53,7 @@ for i, test in enumerate(tests):
         result = find_given_number(**test['input'])
         print(f"Test case {i+1}: Result = {result}, Output = {test['output']}")
         print(f"Match: {result== test['output']}")
-    except:
+    except TypeError:
         print(f"Test Case {i+1}: Function isn't implemented(?)")
 
 

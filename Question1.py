@@ -8,13 +8,13 @@ def find_given_number(cards, given_number):
 
     position=0
 
-    while True:
+    while position < len(cards):
         if cards[position]==given_number:
             return position
         position+=1
 
-        if position ==len(cards):
-            return -1 #number not found the in the list
+    else:
+        return -1
 
 
 tests=[]
@@ -30,7 +30,7 @@ tests.append(test3)
 test4={'input':{'cards': [7], 'given_number': 7}, 'output' : 0}
 tests.append(test4)
 #edgecase5
-test5={'input':{'cards': [13,12,11,7,4,1,0], 'given_number': 12}, 'output' : -1}
+test5={'input':{'cards': [13,12,11,7,4,1,0], 'given_number': 14}, 'output' : -1}
 tests.append(test5)
 #edgecase6
 test6={'input':{'cards': [], 'given_number': 7}, 'output' : -1}

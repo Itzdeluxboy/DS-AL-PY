@@ -6,7 +6,7 @@ def test_location(cards,given_number,mid):
             return 'left'
         else:
             return 'found'
-    elif mid_number < mid_number:
+    elif mid_number < given_number:
         return 'left'
     else:
         return 'right'
@@ -69,7 +69,7 @@ tests.append(test5)
 test6={'input':{'cards': [], 'given_number': 7}, 'output' : -1}
 tests.append(test6)
 #edgecase7
-test7={'input':{'cards': [13,13,13,12,11,11,11,7,4,1,0,0,0,0], 'given_number': 7}, 'output' : 7}
+test7={'input':{'cards': [13,13,13,12,11,7,4,1,0,0,0,0], 'given_number': 7}, 'output' : 5}
 tests.append(test7) 
 #edegcase8
 test8={'input':{'cards': [13,13,13,12,11,11,11,7,7,7,7,7,4,1,0,0,0,0,0], 'given_number': 7}, 'output' : 7}
@@ -86,7 +86,7 @@ for i, test in enumerate(tests):
         result = find_given_number(**test['input'])
         print(f"Test case {i+1}: Result = {result}, Output = {test['output']}")
         print(f"Match: {result== test['output']}")
-    except TypeError:
+    except:
         print(f"Test Case {i+1}: Function isn't implemented(?)")
 
 

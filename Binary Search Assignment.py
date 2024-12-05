@@ -1,8 +1,10 @@
-def count_rotations(nums):
-    pass
-
-
-
+def count_rotations_linear(nums):
+    #linear search
+    '''Create a variable position with the initial value 0. This variable will track the current index in the list.
+       Iterate through the list using a while loop as long as position is less than the length of the list.
+       Compare the number at the current position with the smallest number in the list (min(nums)). If they match, return the current position.
+       If the loop completes without finding the minimum, return 0 as a default value (this happens when the list is empty).  '''
+    
 
 
 tests=[]
@@ -35,7 +37,7 @@ tests.append(test8)
 #To check through the edge cases and print results
 for i, test in enumerate(tests):
     try:
-        result = count_rotations(**test['input'])
+        result = count_rotations_linear(**test['input'])
         print(f"Test case {i+1}: Result = {result}, Output = {test['output']}")
         print(f"Match: {result== test['output']}")
     except:

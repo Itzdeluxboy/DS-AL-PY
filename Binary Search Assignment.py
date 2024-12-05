@@ -24,8 +24,19 @@ tests.append(test5)
 test6={'input':{'nums': [0,1,2,3,4,5,6,7,8,9]}, 'output' : 0}# a list that was rotated n times.
 tests.append(test6)
 #edgecase7
-test7={'input':{'cards': []}, 'output' :-1}# its better to return -1 or raise an exception to indicate an invalid input
+test7={'input':{'nums': []}, 'output' :-1}# its better to return -1 or raise an exception to indicate an invalid input
 tests.append(test7) 
 #edgecase8
-test8={'input':{'cards': [1]}, 'output' :0}# not sure on the output
+test8={'input':{'nums': [1]}, 'output' :0}# not sure on the output
 tests.append(test8) 
+
+
+
+#To check through the edge cases and print results
+for i, test in enumerate(tests):
+    try:
+        result = count_rotations(**test['input'])
+        print(f"Test case {i+1}: Result = {result}, Output = {test['output']}")
+        print(f"Match: {result== test['output']}")
+    except:
+        print(f"Test Case {i+1}: Function isn't implemented(?)")

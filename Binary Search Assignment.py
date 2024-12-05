@@ -5,6 +5,15 @@ def count_rotations_linear(nums):
        Compare the number at the current position with the smallest number in the list (min(nums)). If they match, return the current position.
        If the loop completes without finding the minimum, return 0 as a default value (this happens when the list is empty).  '''
     
+    position=0
+
+    while position < len(nums):
+        if nums[position]==min(nums):
+            return position
+        position+=1
+
+    else:
+        return 0
 
 
 tests=[]

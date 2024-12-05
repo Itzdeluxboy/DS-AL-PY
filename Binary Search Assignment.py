@@ -15,6 +15,15 @@ def count_rotations_linear(nums):
     else:
         return 0
 
+def count_rotations_binary(nums):
+    #binary search
+    '''Find the middle element of the list
+       If the middle element of the list is the smallest element of the list, count the number of elements to the left of the list
+       If the middle element of the list is greater than the last element of the list then the smallest number of the list lies to the left of the list.
+       If the middle element of the list is smaller than the last element of the list then the smallest number of the list lies to the right of the list
+       If there are no elements or if there is only one element, return 0'''
+    
+
 
 tests=[]
 test1 = {'input':{'nums': [7,8,9,0,1,2,3,4,5,6]}, 'output' : 3}

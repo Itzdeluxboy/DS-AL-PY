@@ -22,6 +22,9 @@ def count_rotations_binary(nums):
        If the middle element of the list is greater than the last element of the list then the smallest number of the list lies to the left of the list.
        If the middle element of the list is smaller than the last element of the list then the smallest number of the list lies to the right of the list
        If there are no elements or if there is only one element, return 0'''
+    if not nums:
+        return -1
+    
     left, right = 0, len(nums)-1
     while left <= right:
         mid =(left+right)//2

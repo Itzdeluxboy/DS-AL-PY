@@ -22,7 +22,28 @@ def count_rotations_binary(nums):
        If the middle element of the list is greater than the last element of the list then the smallest number of the list lies to the left of the list.
        If the middle element of the list is smaller than the last element of the list then the smallest number of the list lies to the right of the list
        If there are no elements or if there is only one element, return 0'''
-    
+    left, right = 0, len(nums)-1
+    while left <= right:
+        mid =(left+right)//2
+
+
+        if mid > 0 and nums[mid] < nums[mid-1]:
+            return mid
+        
+        if nums[left] <= nums[right]:
+            return left
+        
+
+        if nums[mid] >= nums[left]:
+
+            left = mid+1
+        else:
+
+            right = mid-1
+
+    return 0
+
+
 
 
 tests=[]
@@ -55,7 +76,7 @@ tests.append(test8)
 #To check through the edge cases and print results
 for i, test in enumerate(tests):
     try:
-        result = count_rotations_linear(**test['input'])
+        result = count_rotations_binary(**test['input'])
         print(f"Test case {i+1}: Result = {result}, Output = {test['output']}")
         print(f"Match: {result== test['output']}")
     except:

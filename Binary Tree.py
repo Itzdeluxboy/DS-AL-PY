@@ -26,5 +26,27 @@ def parse_tuple(data):
         node = TreeNode(data)
     return node
 
-tree2 = parse_tuple(tree_tuple)
-print(tree2.left.left.key)
+tree= parse_tuple(tree_tuple)
+
+
+def traverse_in_order(node):
+    if node is None:
+        return []
+    return (traverse_in_order(node.left)+[node.key]+traverse_in_order(node.right))
+
+
+print(traverse_in_order(tree))
+
+def tree_height(node):
+    if node is None:
+        return 0
+    return 1 +max(tree_height(node.left), tree_height(node.right))
+
+print(tree_height(tree))
+
+def tree_size(node):
+    if node is None:
+        return 0
+    return 1 + tree_size(node.left)+tree_size(node.right)
+
+print(tree_size(tree))

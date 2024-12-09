@@ -83,3 +83,42 @@ tree1 = TreeNode.parse_tuple(((1, 3, None), 2, ((None, 3, 4), 5, (6, 7, 8))))
 tree2 = TreeNode.parse_tuple((('aakash', 'biraj', 'hemanth')  , 'jadhesh', ('siddhant', 'sonaksh', 'vishal')))
 print(is_bst(tree1))
 print(is_bst(tree2))
+
+
+class BTSNode():
+    def __init__(self, key, value = None):
+        self.key = key
+        self.value = value
+        self.left = None
+        self.right = None
+        self.parent = None
+    
+class User:
+    def __init__(self, username, name, email):
+        self.username = username
+        self.name = name
+        self.email = email
+        print('User Created!')
+
+    def introduce_yourself(self, cont_name):
+        print("Hi {}, I'm {}! Contact me at {}".format(cont_name, self.name, self.email))
+
+
+    def __repr__(self):
+        return "User(username='{}', name='{}', email='{}')".format(self.username, self.name, self.email)
+
+    def __str__(self):
+        return self.__repr__()
+    
+
+aakash = User('aakash', 'Aakash Rai', 'aakash@example.com')
+biraj = User('biraj', 'Biraj Das', 'biraj@example.com')
+hemanth = User('hemanth', 'Hemanth Jain', 'hemanth@example.com')
+jadhesh = User('jadhesh', 'Jadhesh Verma', 'jadhesh@example.com')
+siddhant = User('siddhant', 'Siddhant Sinha', 'siddhant@example.com')
+sonaksh = User('sonaksh', 'Sonaksh Kumar', 'sonaksh@example.com')
+vishal = User('vishal', 'Vishal Goel', 'vishal@example.com')
+
+
+tree = BTSNode(jadhesh.username, jadhesh)
+print(tree.key, tree.value)        

@@ -122,14 +122,14 @@ vishal = User('vishal', 'Vishal Goel', 'vishal@example.com')
 
 def insert(node, key, value):
     if node is None:
-        node = BTSNode(key, value)
+        return BTSNode(key, value)
     elif key < node.key:
         node.left = insert(node.left, key, value)
         node.left.parent = node
     elif key > node.key:
         node.right = insert(node.right, key, value)
         node.right.parent = node
-    return  
+    return node
 
 tree = insert(None, jadhesh.username, jadhesh)
 insert(tree, biraj.username, biraj)
@@ -138,3 +138,33 @@ insert(tree, aakash.username, aakash)
 insert(tree, hemanth.username, hemanth)
 insert(tree, siddhant.username, siddhant)
 insert(tree, vishal.username, siddhant)
+
+
+def find(node,key):
+    if node is None:
+        return None
+    if key == node.key:
+        return node
+    if key < node.key:
+        return find(node.left,key)
+    if key > node.key:
+        return find(node.right,key)
+
+node = find(tree, hemanth.username)
+print(node.key, node.value)
+
+def update(node, key, value):
+    target = find(node, key)
+    if target is not None:
+        target.value = value
+
+update(tree, 'hemanth', User('hemanth', 'Hemanth J', 'hemanthj@example.com'))
+node = find(tree, 'hemanth')
+print(node.value)
+
+def list_all(node):
+    if node is None:
+        return[]
+    return list_all(node.left)+[(node.key, node.value)]+list_all(node.right)
+
+print(list_all(tree))

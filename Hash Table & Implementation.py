@@ -60,3 +60,26 @@ print(len(basic_table.data_list) == 4096)
 basic_table.insert('Aakash', '9999999999')
 basic_table.insert('Hemanth', '8888888888')
 print(basic_table.find('Hemanth') == '8888888888')
+
+#Complete the function get_valid_index
+def get_valid_index(data_list, key):
+    idx= get_index(data_list, key)
+
+    while True:
+        kv=data_list[idx]
+
+        if kv is None:
+            return idx
+        
+        k, v = kv
+        if k==key:
+            return idx
+        idx +=1
+        
+        if idx ==len(data_list):
+            idx = 0
+
+data_list2 = [None] * MAX_HASH_TABLE_SIZE
+print(get_valid_index(data_list2, 'listen') == 655)
+data_list2[get_index(data_list2, 'listen')] = ('listen', 99)
+print(get_valid_index(data_list2, 'silent') == 656)

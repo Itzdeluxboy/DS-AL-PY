@@ -43,69 +43,85 @@ def bubble_sort(nums):
 
     return nums
 
-#test1
+# Test 1
+print("Running Test 1...")
 nums1, output1 = test1['input']['nums'], test1['output']
 print('Input:', nums1)
 print('Expected output:', output1)
-result1= bubble_sort(nums1)
+result1 = bubble_sort(nums1)
 print('Actual output:', result1)
 print('Match:', result1 == output1)
+print()
 
 # Test 2
+print("Running Test 2...")
 nums2, output2 = test2['input']['nums'], test2['output']
 print('Input:', nums2)
 print('Expected output:', output2)
 result2 = bubble_sort(nums2)
 print('Actual output:', result2)
 print('Match:', result2 == output2)
+print()
 
 # Test 3
+print("Running Test 3...")
 nums3, output3 = test3['input']['nums'], test3['output']
 print('Input:', nums3)
 print('Expected output:', output3)
 result3 = bubble_sort(nums3)
 print('Actual output:', result3)
 print('Match:', result3 == output3)
+print()
 
 # Test 4
+print("Running Test 4...")
 nums4, output4 = test4['input']['nums'], test4['output']
 print('Input:', nums4)
 print('Expected output:', output4)
 result4 = bubble_sort(nums4)
 print('Actual output:', result4)
 print('Match:', result4 == output4)
+print()
 
 # Test 5
+print("Running Test 5...")
 nums5, output5 = test5['input']['nums'], test5['output']
 print('Input:', nums5)
 print('Expected output:', output5)
 result5 = bubble_sort(nums5)
 print('Actual output:', result5)
 print('Match:', result5 == output5)
+print()
 
 # Test 6
+print("Running Test 6...")
 nums6, output6 = test6['input']['nums'], test6['output']
 print('Input:', nums6)
 print('Expected output:', output6)
 result6 = bubble_sort(nums6)
 print('Actual output:', result6)
 print('Match:', result6 == output6)
+print()
 
 # Test 7
+print("Running Test 7...")
 nums7, output7 = test7['input']['nums'], test7['output']
 print('Input:', nums7)
 print('Expected output:', output7)
 result7 = bubble_sort(nums7)
 print('Actual output:', result7)
 print('Match:', result7 == output7)
+print()
 
 # Test 8
+print("Running Test 8...")
 nums8, output8 = test8['input']['nums'], test8['output']
 print('Input:', nums8)
 print('Expected output:', output8)
 result8 = bubble_sort(nums8)
 print('Actual output:', result8)
 print('Match:', result8 == output8)
+print()
 
 # Test 9
 # nums9, output9 = test9['input']['nums'], test9['output']
@@ -114,3 +130,95 @@ print('Match:', result8 == output8)
 # result9 = bubble_sort(nums9)
 # print('Actual output:', result9)
 # print('Match:', result9 == output9)
+
+
+#insertion sort
+def insertion_sort(nums):
+    nums= list(nums)
+    for i in range(len(nums)):
+        cur = nums.pop(i)
+        j = i-1
+        while j >=0 and nums[j] > cur:
+            j-=1
+        nums.insert(j+1, cur)
+    return nums
+
+# Test 1
+print("Running Test 1...")
+nums1, output1 = test1['input']['nums'], test1['output']
+print('Input:', nums1)
+print('Expected output:', output1)
+result1 = bubble_sort(nums1)
+print('Actual output:', result1)
+print('Match:', result1 == output1)
+print()
+
+# Test 2
+print("Running Test 2...")
+nums2, output2 = test2['input']['nums'], test2['output']
+print('Input:', nums2)
+print('Expected output:', output2)
+result2 = bubble_sort(nums2)
+print('Actual output:', result2)
+print('Match:', result2 == output2)
+print()
+
+# Test 3
+print("Running Test 3...")
+nums3, output3 = test3['input']['nums'], test3['output']
+print('Input:', nums3)
+print('Expected output:', output3)
+result3 = bubble_sort(nums3)
+print('Actual output:', result3)
+print('Match:', result3 == output3)
+print()
+
+# Test 4
+print("Running Test 4...")
+nums4, output4 = test4['input']['nums'], test4['output']
+print('Input:', nums4)
+print('Expected output:', output4)
+result4 = bubble_sort(nums4)
+print('Actual output:', result4)
+print('Match:', result4 == output4)
+print()
+
+# Test 5
+print("Running Test 5...")
+nums5, output5 = test5['input']['nums'], test5['output']
+print('Input:', nums5)
+print('Expected output:', output5)
+result5 = bubble_sort(nums5)
+print('Actual output:', result5)
+print('Match:', result5 == output5)
+print()
+
+# Test 6
+print("Running Test 6...")
+nums6, output6 = test6['input']['nums'], test6['output']
+print('Input:', nums6)
+print('Expected output:', output6)
+result6 = bubble_sort(nums6)
+print('Actual output:', result6)
+print('Match:', result6 == output6)
+print()
+
+# Test 7
+print("Running Test 7...")
+nums7, output7 = test7['input']['nums'], test7['output']
+print('Input:', nums7)
+print('Expected output:', output7)
+result7 = bubble_sort(nums7)
+print('Actual output:', result7)
+print('Match:', result7 == output7)
+print()
+
+# Test 8
+print("Running Test 8...")
+nums8, output8 = test8['input']['nums'], test8['output']
+print('Input:', nums8)
+print('Expected output:', output8)
+result8 = bubble_sort(nums8)
+print('Actual output:', result8)
+print('Match:', result8 == output8)
+print()

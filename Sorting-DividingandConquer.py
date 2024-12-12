@@ -262,6 +262,50 @@ nb7 = Notebook('python-fundamentals', 'vishal', 136)
 nb8 = Notebook('python-functions', 'aakashns', 74)
 nb9 = Notebook('python-numpy', 'siddhant', 92)
 
-notebooks = [nb0, nb1, nb2, nb3, nb4, nb5,nb6, nb7, nb8, nb9]
-print(notebooks)
-    
+notebooks = [nb0, nb1, nb2, nb3, nb4, nb5, nb6, nb7, nb8, nb9]
+
+def compare_likes(nb1, nb2):
+    if nb1.likes < nb2.likes:
+        return 'lesser'
+    elif nb1.likes == nb2.likes:
+        return 'equal'
+    else:
+        return 'greater'
+
+def compare_titles(nb1, nb2):
+    if nb1.title < nb2.title:
+        return 'lesser'
+    elif nb1.title == nb2.title:
+        return 'equal'
+    else:
+        return 'greater'
+
+def merge_sort(objs, compare=compare_titles):
+    if len(objs) < 2:
+        return objs
+    mid = len(objs) // 2
+    return merge(
+        merge_sort(objs[:mid], compare), 
+        merge_sort(objs[mid:], compare), 
+        compare
+    )
+
+def merge(left, right, compare):
+    i, j, merged = 0, 0, []
+    while i < len(left) and j < len(right):
+        result = compare(left[i], right[j])
+        if result in ('lesser', 'equal'):
+            merged.append(left[i])
+            i += 1
+        else:
+            merged.append(right[j])
+            j += 1
+    return merged + left[i:] + right[j:]
+
+# Sort by title
+sorted_by_title = merge_sort(notebooks, compare_titles)
+print("Sorted by Title:", sorted_by_title)
+
+# Sort by likes
+sorted_by_likes = merge_sort(notebooks, compare_likes)
+print("Sorted by Likes:", sorted_by_likes)

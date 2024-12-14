@@ -19,3 +19,38 @@ class Graph:
             result += f"{node}: {adjacent_nodes}\n"
         return result
 
+def bfs(graph, source):
+    visited = [False] * len(graph.data)
+    queue = []
+    
+    visited[source] = True    
+    queue.append(source)
+    
+    traversal_order = []  
+    
+    while queue:
+        current = queue.pop(0)  
+        
+        traversal_order.append(current)  
+        
+        
+        for neighbor in graph.data[current]:
+            if not visited[neighbor]:
+                visited[neighbor] = True
+                queue.append(neighbor)
+    
+    return traversal_order
+
+g1 = Graph()
+
+
+g1.add_edge(0, 1)
+g1.add_edge(0, 4)
+g1.add_edge(1, 2)
+g1.add_edge(1, 3)
+g1.add_edge(1, 4)
+g1.add_edge(2, 3)
+g1.add_edge(3, 4)
+
+
+print(bfs(g1, 3))

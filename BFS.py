@@ -51,6 +51,4 @@ g1.add_edge(1, 3)
 g1.add_edge(1, 4)
 g1.add_edge(2, 3)
 g1.add_edge(3, 4)
-
-
 print(bfs(g1, 3))

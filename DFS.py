@@ -28,3 +28,15 @@ class Graph:
                         stack.append(neighbour)
 
         return result
+
+g = Graph()
+g.add_edge(0, 1)
+g.add_edge(0, 4)
+g.add_edge(1, 2)
+g.add_edge(1, 3)
+g.add_edge(1, 4)
+g.add_edge(3, 4)
+g.add_edge(3, 2)
+
+
+print("DFS Traversal:", g.dfs_iterative(0))# does a DFS traversal starting at node 0 and prints the order of the traversal
